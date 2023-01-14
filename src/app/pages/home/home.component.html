@@ -1,0 +1,53 @@
+<div>
+    <h1>Lista de Productos</h1>
+    <div>
+        <div>
+          <div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Descripción
+                    </th>
+                    <th>
+                        Precio de Compra
+                    </th>
+                    <th>
+                        Precio de Venta
+                    </th>
+                    <th>
+                        Ganancia
+                    </th>
+                    <th>
+                        Existencia
+                    </th>
+                     <th>
+                        Editar
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of listaProductos; index as col">
+                        <td>{{col + 1}}</td>
+                        <td>{{producto.id}}</td>
+                        <td>{{producto.descripcion}}</td>
+                        <td>{{producto.precioCompra | currency : "S/. "}}</td>
+                        <td>{{producto.precioVenta | currency : "S/. "}}</td>
+                        <td>{{producto.ganancia}}</td>
+                        <td>{{producto.existencia | number}}</td>
+                        <button type="submit" class="btn btn-primary" (click)="editar(producto.id)" >Editar</button>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

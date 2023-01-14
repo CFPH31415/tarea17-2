@@ -1,0 +1,25 @@
+<div>
+    <h1>Producto Número: {{id}}</h1>
+    <form>
+        <div>
+            <div *ngFor="let item of productoDetalle"> 
+                <label for="id">Código de Barra:</label>
+                <input type="text" [(ngModel)]="item.id" name="id" id="id">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" [(ngModel)]="item.descripcion" name="descripcion" id="descripcion">
+                <label for="compra">Precio Compra:</label>
+                <input type="text" [(ngModel)]="item.precioCompra" name="precioCompra" id="compra">
+                <label for="venta" >Precio Venta:</label>
+                <input type="text" [(ngModel)]="item.precioVenta" name="precioVenta" id="venta" >
+                <label for="ganancia" >Ganancia:</label>
+                <input type="text" [(ngModel)]="item.ganancia" name="ganancia" id="ganancia">
+                <label for="existencia" >Existencia:</label>
+                <input type="text" [(ngModel)]="item.existencia" name="existencia" name="existencia">
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" [routerLink]="['/']" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{exact: true}"> Regresar</button>
+        </div>
+    </form>
+</div>
+
